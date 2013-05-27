@@ -1,0 +1,35 @@
+.bg {
+  font-size: 80em;
+  position: absolute;
+  top: 340px;
+  z-index: -2;
+  &:not(.bg-right) { left: -40px; }
+  color: rgba(0,0,0,0.2);
+  &.bg-right {
+    right: -40px;
+  }
+}
+
+#container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+h1 { 
+  font-family: 'Josefin Slab', Arial, serif; font-weight: 400; 
+  font-size: 8em;
+}
+
+#sign-in-modal {
+  position: absolute;
+  padding: 60px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.5);
+  left: 33%;
+  top: 200px;
+  width: 33%;
+  form {
+    margin: 0 auto;
+    width: 346px;
+  }
+}

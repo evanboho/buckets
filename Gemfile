@@ -2,12 +2,14 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
+gem 'ember-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'hamlbars'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -34,6 +36,7 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'devise', git: "git@github.com:plataformatec/devise.git", branch: "rails4"
 
 # Use unicorn as the app server
 gem 'unicorn'
@@ -42,5 +45,4 @@ gem 'unicorn'
 gem 'capistrano', group: :development
 gem 'rvm-capistrano'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'make_voteable', git: "git@github.com:evanboho/make_voteable", branch: "rails4"
