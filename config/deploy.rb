@@ -1,10 +1,19 @@
-require 'bunlder/capistrano'
+set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
+set :rvm_autolibs_flag, "read-only"        # more info: rvm help autolibs
+
+before 'deploy:setup', 'rvm:install_rvm'   # install RVM
+before 'deploy:setup', 'rvm:install_ruby'  # install Ruby and create gemset, OR:
+before 'deploy:setup', 'rvm:create_gemset' # only create gemset
+
+require "rvm/capistrano"
+
+require 'bundler/capistrano'
 
 server "198.199.118.144", :web, :app, :db, primary: true
 
 set :application, "buckets"
 set :user, "deployer"
-set :deploy_to, "/home/#{user}/#{application}"
+set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
