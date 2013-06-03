@@ -1,0 +1,8 @@
+= hb "input value=newCategoryName action='addCategory'"
+%ul
+  = hb "each model" do
+    %li{style: "list-style: none;"}
+      = hb "name"
+      /%a{:href => "#", :_action => 'delCategory'}
+      /  = hb "id"
+  %button{:_action => 'getCategory'}

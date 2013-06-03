@@ -1,5 +1,8 @@
 Buckets.ApplicationController = Ember.Controller.extend
-  names: []
+
+  getCategories: ->
+    cat = Buckets.Category.find()
+    console.log cat
 
   addName: ->
     @names.pushObject name: @get('newName')

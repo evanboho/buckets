@@ -2,11 +2,15 @@
 .bg.bg-right F
 
 .sign-in
-  = link_to_function "sign in", "$('#sign-in-modal').fadeIn()"
-
-#sign-in-modal.hide
   - unless current_user
-    = form_for @user || User.new, url: user_session_path do |f|
-      = f.text_field :email, placeholder: "email"
-      = f.password_field :password, placeholder: "password"
-      = f.submit
+    = link_to_function "sign in", "$('#sign-in-modal').fadeIn()"
+    #sign-in-modal.hide
+      - unless current_user
+        = form_for @user || User.new, url: new_user_session_path do |f|
+          = f.text_field :email, placeholder: "email"
+          = f.password_field :password, placeholder: "password"
+          = f.submit  
+  - else
+    = current_user.email
+    = link_to "sign out", destroy_user_session_path, method: :delete
+

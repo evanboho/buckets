@@ -3,6 +3,9 @@ Buckets::Application.routes.draw do
   resources :todos
 
   root to: "home#index"
+
+  resources :categories
+  resources :todos
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,11 +1,4 @@
 #container
-  %h1 Buckets of Lists
-  What is your name? 
-  = hb "view Ember.TextField valueBinding='newName' action='addName'"
-  %br
-  %br
-  %h2.center
-    = hb "each names" do
-      hello
-      = hb "name"
-      %br
+  %h1 Buckets of List
+
+  = hb "outlet"

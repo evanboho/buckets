@@ -18,4 +18,7 @@
 //= require ember-data
 //= require_self
 //= require buckets
-Buckets = Ember.Application.create();
+Buckets = Ember.Application.create({
+  LOG_TRANSITIONS: true,
+});
+Ember.LOG_BINDINGS = true
