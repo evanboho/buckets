@@ -27,7 +27,7 @@ ssh_options[:forward_agent] = true
 after "deploy", "deploy:cleanup"
 
 namespace :deploy do
-  %w[start stop restart].each do |command|
+  %w[start stop restart upgrade].each do |command|
     desc "#{command} unicorn server"
     task command, roles: :app, except: { no_release: true } do
       run "/etc/init.d/unicorn_#{application} #{command}"

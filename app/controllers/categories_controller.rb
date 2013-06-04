@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     # logger.info params
-    respond_with Category.all
+    render :json => Category.all.includes(:todos)
   end
 
   def show

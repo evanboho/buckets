@@ -1,8 +1,19 @@
-= hb "input value=newCategoryName action='addCategory'"
-%ul
-  = hb "each model" do
-    %li{style: "list-style: none;"}
-      = hb "name"
-      /%a{:href => "#", :_action => 'delCategory'}
-      /  = hb "id"
-  %button{:_action => 'getCategory'}
+%h3.center 
+  Add Category
+  = hb "input value=newCategoryName action='addCategory'"
+%div
+  = hb "each categories itemController='category'" do
+    .category
+      .close
+        %a{:href => "#", :_action => 'delCategory'}
+          x
+      %h2
+        = hb "name"
+      %br
+      = hb "input value=newTodoName action='addTodo'"
+      %br
+      %ul.topics
+        = hb "each todos" do
+          %li
+            = hb "title"
+            /%span <a {{action delTodo itemController="todo"}}>x</a>

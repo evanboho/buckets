@@ -1,0 +1,2 @@
+%li= hb "title"
+%div <a {{action delTodo}}>x</a>
