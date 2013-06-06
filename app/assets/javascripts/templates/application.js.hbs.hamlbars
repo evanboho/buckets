@@ -1,4 +1,28 @@
 #container
-  %h1 Buckets of List
+  %h1 List Bucket
 
   = hb "outlet"
+
+#sign-up-modal.hide
+  %form{hb: "action signup on='submit'"}
+    = hb "input value=newEmail type='email' placeholder='email'"
+    = hb "input value=newPassword type='password' placeholder='password'"
+    = hb "input value=confirmation type='password' placeholder='confirm password'"
+    = hb "input type='submit' value='sign in'"
+  %br
+  .center{style: "color: white"}
+    = "- Or -"
+    %br
+    %a{href: "#", onclick: "$('#sign-in-modal').fadeIn(); $('#sign-up-modal').fadeOut()"}
+      sign in
+#sign-in-modal.hide
+  %form{hb: "action login on='submit'"}
+    = hb "input value=email type='email' placeholder='email'"
+    = hb "input value=password type='password' placeholder='password'"
+    = hb "input type='submit' value='sign up'"
+  %br
+  .center{style: "color: white"}
+    = "- Or -"
+    %br
+    %a{href: "#", onclick: "$('#sign-in-modal').fadeOut(); $('#sign-up-modal').fadeIn()"}
+      sign up

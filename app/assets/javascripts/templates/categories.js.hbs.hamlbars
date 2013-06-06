@@ -16,4 +16,4 @@
         = hb "each todos" do
           %li
             = hb "title"
-            /%span <a {{action delTodo itemController="todo"}}>x</a>
+            %span <a {{action 'delTodo' todo}}>x</a>

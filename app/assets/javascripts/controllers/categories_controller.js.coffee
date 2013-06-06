@@ -10,6 +10,9 @@ Buckets.CategoryController = Ember.ObjectController.extend
     @get('store').commit()
     @set("newTodoName", "")
 
+  delTodo: ->
+    alert "hey"
+
 Buckets.CategoriesController = Ember.ArrayController.extend
   addCategory: ->
     Buckets.Category.createRecord({name: @get('newCategoryName')})
