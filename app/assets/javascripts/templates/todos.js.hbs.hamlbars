@@ -1,2 +1,3 @@
-%li= hb "title"
-%div <a {{action delTodo}}>x</a>
+%ul.topics
+  = hb "each model" do
+    {{render "todo" this}}

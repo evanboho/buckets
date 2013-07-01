@@ -1,0 +1,11 @@
+= hb "controllers.currentUser.content"
+.category
+  .close
+    %a{:href => "#", :_action => 'delCategory'}
+      x
+  %h2
+    = hb "name"
+  %br
+  = hb "input value=newTodoName action='addTodo'"
+  %br
+  {{render "todos" todos}}

@@ -1,9 +1,13 @@
 #container
+  = hb "currentUser.email"
   %h1 List Bucket
 
   = hb "outlet"
 
 #sign-up-modal.hide
+  .error
+    = hb "if errorMessage" do
+      = hb "errorMessage"
   %form{hb: "action signup on='submit'"}
     = hb "input value=newEmail type='email' placeholder='email'"
     = hb "input value=newPassword type='password' placeholder='password'"
@@ -16,6 +20,9 @@
     %a{href: "#", onclick: "$('#sign-in-modal').fadeIn(); $('#sign-up-modal').fadeOut()"}
       sign in
 #sign-in-modal.hide
+  .error
+    = hb "if errorMessage" do
+      = hb "errorMessage"
   %form{hb: "action login on='submit'"}
     = hb "input value=email type='email' placeholder='email'"
     = hb "input value=password type='password' placeholder='password'"

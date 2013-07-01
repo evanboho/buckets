@@ -7,4 +7,16 @@
     = csrf_meta_tags
   
   %body
+    %script
+      window.user_id = #{current_user.id}
+    .bg S
+    .bg.bg-right F
+
+    - unless current_user
+      = link_to_function "sign in", "$('#sign-in-modal').fadeIn(); $('#sign-up-modal').fadeOut()"
+      |
+      = link_to_function "sign up", "$('#sign-up-modal').fadeIn(); $('#sign-in-modal').fadeOut();"
+    - else
+      = link_to "sign out", destroy_user_session_path, method: :delete
+      
     = yield

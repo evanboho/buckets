@@ -1,12 +1,20 @@
 Buckets.TodoController = Ember.ObjectController.extend
-  delTodo: ->
+  markTodoComplete: ->
     todo = @get("model")
-    todo.deleteRecord()
+    if todo.get("complete") == "completed"
+      todo.set("complete", "")
+    else
+      todo.set("complete", "completed")
     todo.save()
 
 Buckets.TodosController = Ember.ArrayController.extend
+
   addTodo: ->
-    alert @get('newTodoName')
-    #Buckets.Todo.createRecord({name: @get('newTodoName')})
-    #@get('store').commit()
-    #@set('newTodoName', "")
+    title = @get("newTodoName")
+    if !title.trim()
+      return
+    alert title
+    todo = Buckets.Todo.createRecord
+      title: title
+    todo.save()
+    @set('newTodoName', "")

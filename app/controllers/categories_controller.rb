@@ -2,7 +2,6 @@ class CategoriesController < ApplicationController
   respond_to :json
 
   def index
-    # logger.info params
     render :json => Category.all.includes(:todos)
   end
 

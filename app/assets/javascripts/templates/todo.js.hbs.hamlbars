@@ -1,0 +1,3 @@
+%li{:hb => 'bindAttr class="complete"'}
+  = hb "title"
+  %div.delTodo <a {{action 'markTodoComplete'}}>x</a>

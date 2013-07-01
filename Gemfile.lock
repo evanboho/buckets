@@ -6,10 +6,8 @@ GIT
     make_voteable (0.1.1)
       activerecord (>= 4.0.0.rc1)
 
-GIT
-  remote: git@github.com:plataformatec/devise.git
-  revision: 6b5988d756d780903bf8c9ccb3e2b3b724ccebe8
-  branch: rails4
+PATH
+  remote: ~/dev/rails/devise
   specs:
     devise (2.2.4)
       bcrypt-ruby (~> 3.0)
@@ -67,6 +65,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    commands (0.2.1)
+      rails (>= 3.2.0)
     ember-data-source (0.0.5)
       ember-source
     ember-rails (0.12.0)
@@ -76,7 +76,7 @@ GEM
       ember-source (>= 1.0.0.rc2.2)
       execjs (>= 1.2)
       railties (>= 3.1)
-    ember-source (1.0.0.rc5)
+    ember-source (1.0.0.rc6)
       handlebars-source (= 1.0.0.rc4)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -181,8 +181,10 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   coffee-rails (~> 4.0.0)
+  commands
   devise!
   ember-rails
+  ember-source (~> 1.0.0.rc6)
   hamlbars
   jbuilder (~> 1.0.1)
   jquery-rails

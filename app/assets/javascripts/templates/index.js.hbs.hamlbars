@@ -1,0 +1,15 @@
+%h3.center 
+  Add Category
+  = hb "input value=newCategoryName action='addCategory'"
+%div
+  = hb "each categories itemController='category'" do
+    .category
+      .close
+        %a{:href => "#", :_action => 'delCategory'}
+          x
+      %h2
+        = hb "name"
+      %br
+      = hb "input value=newTodoName action='addTodo'"
+      %br
+      {{ render "todos" todos}}

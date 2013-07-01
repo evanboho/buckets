@@ -19,3 +19,23 @@
 //= require_self
 //= require buckets
 Buckets = Ember.Application.create();
+currentUser = Buckets.currentUser = function(){
+  if (typeof user_id != "undefined") {
+    return Buckets.User.find(window.user_id);
+  }
+}
+userLoggedIn = Buckets.userLoggedIn = function() {
+
+  if (typeof user_id != "undefined") {
+    return true;
+  } else {
+    return false;
+  }
+}
+userIsAdmin = Buckets.userIsAdmin = function() {
+  if (currentUser().get("admin") == true) {
+    return true;
+  } else {
+    return false;
+  }
+}

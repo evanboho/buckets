@@ -1,3 +1,11 @@
+a {
+  color: #333;
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+
 .bg {
   font-size: 80em;
   position: absolute;
@@ -38,6 +46,13 @@ h2, h3, h4, h5 {
   }
 }
 
+.error {
+  color: red;
+  height: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 input {
   border-radius: 5px;
   padding: 3px;
@@ -52,7 +67,7 @@ input {
   }
 }
 
-.category {
+div.category {
   position: relative;
   width: 27%;
   padding: 3%;
