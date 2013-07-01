@@ -1,5 +1,4 @@
 #container
-  = hb "currentUser.email"
   %h1 List Bucket
 
   = hb "outlet"

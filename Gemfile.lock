@@ -6,8 +6,10 @@ GIT
     make_voteable (0.1.1)
       activerecord (>= 4.0.0.rc1)
 
-PATH
-  remote: ~/dev/rails/devise
+GIT
+  remote: git@github.com:plataformatec/devise.git
+  revision: 6b5988d756d780903bf8c9ccb3e2b3b724ccebe8
+  branch: rails4
   specs:
     devise (2.2.4)
       bcrypt-ruby (~> 3.0)
