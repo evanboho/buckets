@@ -25,7 +25,6 @@ currentUser = Buckets.currentUser = function(){
   }
 }
 userLoggedIn = Buckets.userLoggedIn = function() {
-
   if (typeof user_id != "undefined") {
     return true;
   } else {
