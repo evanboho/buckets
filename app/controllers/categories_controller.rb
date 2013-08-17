@@ -2,7 +2,10 @@ class CategoriesController < ApplicationController
   respond_to :json
 
   def index
-    render :json => Category.all.includes(:todos)
+    # render :json => Category.all.includes(:todos)
+    @categories = Category.all.includes(:todos)
+    logger.info @categories.to_json
+    respond_with @categories
   end
 
   def show
